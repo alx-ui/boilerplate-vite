@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/alxUI/boilerplate-vite/compare/v1.0.0...v2.0.0) (2024-01-21)
+
+
+### Features
+
+* update dependencies and vite v5 ([92d7887](https://github.com/alxUI/boilerplate-vite/commit/92d788789c2bccdd8ffb6a92b16114b3025359f3))
+
+
+### BREAKING CHANGES
+
+* Add Vite v5 and add minimun node version 18
+
 # 1.0.0 (2023-03-24)
 
 
