@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/alxUI/boilerplate-vite/compare/v2.0.0...v2.1.0) (2024-03-10)
+
+
+### Features
+
+* update dependencies and version base node v20 ([9e6422a](https://github.com/alxUI/boilerplate-vite/commit/9e6422a25b98671ef0387709b0efaf8fd33d1089))
+
 # [2.0.0](https://github.com/alxUI/boilerplate-vite/compare/v1.0.0...v2.0.0) (2024-01-21)
 
 
