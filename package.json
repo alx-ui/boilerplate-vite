@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "type": "module",
   "engines": {
-    "node": ">=18.18.2",
-    "npm": ">=8.1.0"
+    "node": ">=20.11.0",
+    "npm": ">=10.4.0"
   },
   "scripts": {
     "dev": "vite",
@@ -16,30 +16,30 @@
     "format:check": "prettier --check src/",
     "commit": "cz",
     "release": "semantic-release --no-ci",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
-    "@ialexanderbrito/eslint-config": "^2.0.2",
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
+    "@ialexanderbrito/eslint-config": "^2.1.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/node": "^20.11.5",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
+    "@types/node": "^20.11.25",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "@vitejs/plugin-react": "^4.2.1",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "^8.56.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "semantic-release": "^22.0.12",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "semantic-release": "^23.0.2",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.5",
     "vite-tsconfig-paths": "^4.3.1"
   },
   "config": {
