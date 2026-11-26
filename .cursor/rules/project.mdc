@@ -1,0 +1,14 @@
+---
+description: Core project guidelines for boilerplate-vite (Vite 8, React 19, Tailwind CSS v4, ESLint 10, Prettier 3)
+alwaysApply: true
+---
+
+Follow `AGENTS.md` at the repository root as the single source of truth for architecture, scripts, and conventions.
+
+## Quick Guardrails
+
+- **Stack:** Vite 8, React 19, React Router v7, TypeScript 6 (`strict: true`, `verbatimModuleSyntax: true`), Tailwind CSS v4 (`src/index.css`).
+- **Config:** Use `eslint.config.mjs` (ESLint 10 Flat Config) and `prettier.config.mjs` (both from `@ialexanderbrito/eslint-config`). Do not add legacy `.eslintrc.*`, `.prettierrc`, or `tailwind.config.*`.
+- **Package Manager:** Use `yarn` (not npm/pnpm) to keep `yarn.lock` consistent.
+- **Skills:** Check `.agents/skills/<skill-name>/SKILL.md` when a specialized workflow applies.
+- **Verify:** Run `yarn validate` (`type-check`, `lint`, `format:check`) and `yarn build` after changes.
