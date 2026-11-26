@@ -3,114 +3,202 @@
 :root {
   color-scheme: dark;
 
-  --vite-bg: #101012;
-  --vite-surface: #16161a;
-  --vite-surface-soft: #1c1c22;
-  --vite-border: #27272f;
-  --vite-border-hover: #383846;
+  --color-primary: #16171d;
+  --color-midnight: #0c0912;
+  --color-slate: #14121a;
+  --color-white: #ffffff;
+  --color-grey: #867e8e;
+  --color-nickel: #3b3440;
 
-  --vite-text: #f5f5f7;
-  --vite-text-muted: #a1a1aa;
-  --vite-text-dim: #71717a;
-
-  --vite-brand: #646cff;
-  --vite-brand-hover: #747bff;
-  --vite-brand-soft: rgba(100, 108, 255, 0.14);
-  --vite-brand-text: #a5a9ff;
-
-  --vite-cyan: #41d1ff;
-  --vite-purple: #bd34fe;
-  --vite-gold: #ffdd35;
+  --color-electric: #6c3bff;
+  --color-electric-bright: #863bff;
+  --color-vite: #b39aff;
+  --color-lavender: #ede6ff;
+  --color-wine: #140033;
+  --color-zest: #22ff73;
+  --color-aqua: #32f3e9;
 }
 
 @theme inline {
-  --color-vite-bg: var(--vite-bg);
-  --color-vite-surface: var(--vite-surface);
-  --color-vite-surface-soft: var(--vite-surface-soft);
-  --color-vite-border: var(--vite-border);
-  --color-vite-border-hover: var(--vite-border-hover);
-  --color-vite-text: var(--vite-text);
-  --color-vite-text-muted: var(--vite-text-muted);
-  --color-vite-text-dim: var(--vite-text-dim);
-  --color-vite-brand: var(--vite-brand);
-  --color-vite-brand-hover: var(--vite-brand-hover);
-  --color-vite-brand-soft: var(--vite-brand-soft);
-  --color-vite-brand-text: var(--vite-brand-text);
+  --color-primary: var(--color-primary);
+  --color-midnight: var(--color-midnight);
+  --color-slate: var(--color-slate);
+  --color-grey: var(--color-grey);
+  --color-nickel: var(--color-nickel);
+  --color-electric: var(--color-electric);
+  --color-electric-bright: var(--color-electric-bright);
+  --color-vite: var(--color-vite);
+  --color-lavender: var(--color-lavender);
+  --color-wine: var(--color-wine);
+  --color-zest: var(--color-zest);
+  --color-aqua: var(--color-aqua);
 
-  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 body {
-  background-color: var(--vite-bg);
-  color: var(--vite-text);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   font-family: var(--font-sans);
   line-height: 1.6;
 }
 
-.vite-hero-glow {
+/* Primary button matching vite.dev glowing violet border */
+.vite-btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-white);
   background:
-    radial-gradient(
-      460px circle at 50% 0%,
-      rgba(189, 52, 254, 0.16),
-      transparent 70%
+    linear-gradient(180deg, rgba(28, 18, 48, 0.96), rgba(16, 11, 26, 0.98))
+      padding-box,
+    linear-gradient(135deg, #c49bff 0%, #863bff 48%, #5b21b6 100%) border-box;
+  border: 1.5px solid transparent;
+  box-shadow:
+    0 0 22px rgba(134, 59, 255, 0.28),
+    inset 0 1px 0 rgba(237, 230, 255, 0.16);
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.vite-btn-primary:hover {
+  transform: scale(1.03);
+  filter: brightness(1.18);
+  box-shadow:
+    0 0 28px rgba(134, 59, 255, 0.42),
+    inset 0 1px 0 rgba(237, 230, 255, 0.25);
+}
+
+.vite-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5625rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-white);
+  background-color: transparent;
+  border: 1px solid var(--color-nickel);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.vite-btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+  transform: scale(1.03);
+}
+
+/* Diagonal vibrant violet light-streak backdrop matching vite.dev terminal cards */
+.vite-streak-panel {
+  background:
+    linear-gradient(
+      125deg,
+      rgba(237, 230, 255, 0.26) 0%,
+      transparent 16%,
+      rgba(134, 59, 255, 0.45) 32%,
+      rgba(74, 14, 180, 0.85) 54%,
+      rgba(179, 154, 255, 0.52) 72%,
+      rgba(108, 59, 255, 0.9) 88%,
+      rgba(237, 230, 255, 0.25) 100%
     ),
     radial-gradient(
-      520px circle at 50% 10%,
-      rgba(65, 209, 255, 0.11),
-      transparent 72%
-    );
+      circle at 18% 20%,
+      rgba(196, 155, 255, 0.45),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #4b15cc 0%, #7e14ff 50%, #3d0c99 100%);
 }
 
-.vite-chip-glow {
-  background: linear-gradient(
-    135deg,
-    rgba(65, 209, 255, 0.35),
-    rgba(189, 52, 254, 0.35)
+/* Isometric 3D Vite chip graphic (pure CSS matching vite.dev hero right column) */
+.vite-iso-scene {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+}
+
+.vite-iso-ambient {
+  position: absolute;
+  inset: 14px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(134, 59, 255, 0.34) 0%,
+    rgba(126, 20, 255, 0.14) 45%,
+    transparent 72%
   );
-  filter: blur(28px);
+  filter: blur(26px);
 }
 
-.vite-title-gradient {
-  background: linear-gradient(180deg, #ffffff 30%, #b8bcff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.vite-iso-tile {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  border-radius: 18px;
+  transform: rotateX(56deg) rotateZ(-42deg);
+  transform-style: preserve-3d;
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(179, 154, 255, 0.14),
+      transparent 60%
+    ),
+    linear-gradient(145deg, #1b1826 0%, #0e0c14 100%);
+  border: 1.5px solid rgba(179, 154, 255, 0.42);
+  box-shadow:
+    -1px 1px 0 #7e22ce,
+    -3px 4px 0 #6c3bff,
+    -5px 7px 0 #5b21b6,
+    -7px 10px 0 #4c1d95,
+    -9px 13px 0 #3b0764,
+    -14px 22px 34px rgba(126, 20, 255, 0.45),
+    0 24px 48px rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.vite-card {
-  transition:
-    border-color 200ms ease,
-    background-color 200ms ease;
+.vite-iso-tile:hover {
+  transform: rotateX(56deg) rotateZ(-42deg) translateZ(8px);
 }
 
-.vite-card:hover {
-  border-color: var(--vite-border-hover);
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@keyframes float-chip {
+  0%,
+  100% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    transform: translateY(-6px);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .reveal {
-    opacity: 0;
-    animation: fade-up 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(var(--index, 0) * 75ms);
+  .vite-iso-float {
+    animation: float-chip 5s ease-in-out infinite;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
+  .vite-iso-float {
     animation: none;
   }
 }
