@@ -1,0 +1,11 @@
+node_modules
+dist
+dist-ssr
+build
+coverage
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+CHANGELOG.md
+.husky
+.agents

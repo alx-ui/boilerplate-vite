@@ -1,58 +1,75 @@
 {
   "name": "boilerplate-vite",
+  "description": "A TypeScript starter for Vite + React that includes all you need to build amazing projects",
   "version": "2.2.0",
+  "private": true,
   "type": "module",
+  "keywords": [
+    "vite",
+    "react",
+    "boilerplate",
+    "typescript",
+    "tailwindcss",
+    "eslint",
+    "prettier"
+  ],
   "engines": {
-    "node": ">=20.11.0",
-    "npm": ">=10.4.0"
+    "node": "^22.22.1 || >=24.10.0"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "yarn type-check && vite build",
+    "preview": "vite preview",
     "serve": "vite preview",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix",
-    "format": "prettier --write **/*.{js,ts,tsx}",
-    "format:check": "prettier --check src/",
+    "type-check": "tsc --noEmit && tsc -p tsconfig.node.json --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "yarn type-check && yarn lint && yarn format:check",
     "commit": "cz",
-    "release": "semantic-release --no-ci",
+    "release": "semantic-release",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs,cjs}": [
+      "eslint --no-warn-ignored --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,yml,yaml,html}": [
+      "prettier --write"
+    ]
+  },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.7"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "@ialexanderbrito/eslint-config": "^2.1.0",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@types/node": "^22.7.4",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.2",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
+    "@ialexanderbrito/eslint-config": "3.0.0",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
+    "@tailwindcss/vite": "4.3.5",
+    "@types/node": "24.19.4",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "commitizen": "4.3.2",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "^8.57.1",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "semantic-release": "^24.1.2",
-    "typescript": "^5.6.2",
-    "vite": "^5.4.8",
-    "vite-tsconfig-paths": "^5.0.1"
+    "eslint": "10.15.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.6.2",
+    "prettier": "3.10.1",
+    "semantic-release": "25.0.9",
+    "tailwindcss": "4.3.5",
+    "typescript": "6.0.3",
+    "vite": "8.4.0"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "eslint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run lint-staged"
     }
   }
 }
