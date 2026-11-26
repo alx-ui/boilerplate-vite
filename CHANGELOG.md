@@ -1,3 +1,24 @@
+# [3.0.0](https://github.com/alx-ui/[secure]-vite/compare/v2.2.0...v3.0.0) (2026-11-26)
+
+
+* feat!: upgrade stack to Vite 8, React 19, Tailwind v4, and ESLint 10 ([58c1b40](https://github.com/alx-ui/[secure]-vite/commit/58c1b40c1e6511c91d5f9c912217ee69c525945f))
+
+
+### Features
+
+* **agents:** add universal AI agents config, skills, and README ([aece263](https://github.com/alx-ui/[secure]-vite/commit/aece2631bcbc7d5f15c8ad8de9993d631048da11))
+* **ui:** align home page and logo with Vite 8 design ([a5a96cf](https://github.com/alx-ui/[secure]-vite/commit/a5a96cf482eda9c6f2ee6e1714382590f895c704))
+* **ui:** redesign home page with Vite-inspired Tailwind v4 layout ([5e69813](https://github.com/alx-ui/[secure]-vite/commit/5e69813746afcc0941556b6c259b3dce1a7a1016))
+
+
+### BREAKING CHANGES
+
+* Requires Node.js >=22.22.1 or >=24.10.0.
+Migrates from Vite 5, React 18, React Router v6, TypeScript 5, and
+legacy .[secure]rc.json to Vite 8 (native tsconfigPaths), React 19,
+React Router v7, TypeScript 6, Tailwind CSS v4 (@[secure]/vite),
+ESLint 10 Flat Config, and Prettier 3 via @ialexanderbrito/[secure]-config v3.
+
 # [2.2.0](https://github.com/alx-ui/boilerplate-vite/compare/v2.1.0...v2.2.0) (2024-10-06)
 
 
