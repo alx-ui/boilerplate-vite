@@ -1,69 +1,116 @@
+@import 'tailwindcss';
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  color-scheme: dark;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --vite-bg: #101012;
+  --vite-surface: #16161a;
+  --vite-surface-soft: #1c1c22;
+  --vite-border: #27272f;
+  --vite-border-hover: #383846;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --vite-text: #f5f5f7;
+  --vite-text-muted: #a1a1aa;
+  --vite-text-dim: #71717a;
+
+  --vite-brand: #646cff;
+  --vite-brand-hover: #747bff;
+  --vite-brand-soft: rgba(100, 108, 255, 0.14);
+  --vite-brand-text: #a5a9ff;
+
+  --vite-cyan: #41d1ff;
+  --vite-purple: #bd34fe;
+  --vite-gold: #ffdd35;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@theme inline {
+  --color-vite-bg: var(--vite-bg);
+  --color-vite-surface: var(--vite-surface);
+  --color-vite-surface-soft: var(--vite-surface-soft);
+  --color-vite-border: var(--vite-border);
+  --color-vite-border-hover: var(--vite-border-hover);
+  --color-vite-text: var(--vite-text);
+  --color-vite-text-muted: var(--vite-text-muted);
+  --color-vite-text-dim: var(--vite-text-dim);
+  --color-vite-brand: var(--vite-brand);
+  --color-vite-brand-hover: var(--vite-brand-hover);
+  --color-vite-brand-soft: var(--vite-brand-soft);
+  --color-vite-brand-text: var(--vite-brand-text);
+
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--vite-bg);
+  color: var(--vite-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.vite-hero-glow {
+  background:
+    radial-gradient(
+      460px circle at 50% 0%,
+      rgba(189, 52, 254, 0.16),
+      transparent 70%
+    ),
+    radial-gradient(
+      520px circle at 50% 10%,
+      rgba(65, 209, 255, 0.11),
+      transparent 72%
+    );
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.vite-chip-glow {
+  background: linear-gradient(
+    135deg,
+    rgba(65, 209, 255, 0.35),
+    rgba(189, 52, 254, 0.35)
+  );
+  filter: blur(28px);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.vite-title-gradient {
+  background: linear-gradient(180deg, #ffffff 30%, #b8bcff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vite-card {
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.vite-card:hover {
+  border-color: var(--vite-border-hover);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  a:hover {
-    color: #747bff;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    animation: fade-up 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--index, 0) * 75ms);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
